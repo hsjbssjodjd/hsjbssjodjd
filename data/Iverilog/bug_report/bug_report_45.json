@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/steveicarus/iverilog/issues/927",
+    "Summary": "crash on out-of-bounds write in function",
+    "Description": "The following reduced test case:\nmodule top;\n    function automatic [23:0] func;\n        input [23:0] in;\n        func[21+:7] = in[21+:7];\n    endfunction\n    initial $display(\"%b\", func(24'h060708));\nendmodule\nCrashes on master with:\nAssertion failed: (val.size() == wid), function of_RET_VEC4, file vthread.cc, line 5475.\n\nBisecting identifies ce9f3d5 as introducing the issue."
+}

@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/steveicarus/iverilog/issues/788",
+    "Summary": "Widely accepted non-ANSI style task argument declarations are now treated as errors",
+    "Description": "A simple example:\nmodule test();\n\ntask print_hex;\n\n  input n;\n\n  reg [7:0] n;\n\n  begin\n    $display(\"%h\", n);\n  end  \nendtask\n\ninitial begin\n  print_hex(66);\nend\n   \nendmodule\n\nThis code compiles without errors or warnings on all other simulators I've tried. But since PR #767, it is rejected by Icarus Verilog with the error message:\ntest.v:7: error: Scalar port ``n'' has a vectored net declaration [7:0].\n\nUnlike for module ports, the IEEE standard doesn't specify what is/isn't allowed.\nI found this when compiling the Micron DDR3 DRAM model, so there is real code out there that uses this form of declaration."
+}

@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/4585",
+    "Summary": "Values displayed in wrong order",
+    "Description": "I defined a function with a static integer that gets incremented and returned on every call.\nDisplaying its value twice produces:\n          2\n          1\n\nThe test is here.\nTested on the recent master. Fedora, Linux 6.3.11"
+}

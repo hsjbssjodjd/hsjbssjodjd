@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/steveicarus/iverilog/issues/576",
+    "Summary": "Assertion when calling $clog2",
+    "Description": "Calling\niverilog -g2012 -o test test.sv\n\nwith this test.sv:\nmodule test;\n\tfunction void fun;\n\t\t$clog2(1);\n\tendfunction\n\talways_comb fun;\nendmodule\n\nfails with an assertion:\ntest.sv:5: warning: always_comb process has no sensitivities.\nivl: net_scope.cc:502: const NetTaskDef* NetScope::task_def() const: Assertion `type_ == TASK' failed.\nsh: line 1: 11118 Done                    /usr/local/lib/ivl/ivlpp -L -F\"/tmp/ivrlg25dedf82f\" -f\"/tmp/ivrlg5dedf82f\" -p\"/tmp/ivrli5dedf82f\"\n     11119 Aborted                 | /usr/local/lib/ivl/ivl -C\"/tmp/ivrlh5dedf82f\" -C\"/usr/local/lib/ivl/vvp.conf\" -- -\n\nReplacing always_comb with always or initial works fine. Calling $clog2 within an always_comb block directly (without being wrapped in another function) also works. It prints this warning though:\nwarning: System task ($clog2) cannot be synthesized in an always_comb process.\n\nIs this true? Shouldn't this get optimized away during synthesis when the argument to $clog2 is constant at compile time?"
+}

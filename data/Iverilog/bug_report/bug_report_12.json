@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/steveicarus/iverilog/issues/649",
+    "Summary": "Bug in variable name for 'not all bits are asynchronously set or reset. This is not currently supported in synthesis'.",
+    "Description": "Use iverilog -S -g2012 to compile the following:\nmodule test(input clk, input rst, input a, output reg [1:0] state);\n    reg [1:0] next_state;\n    reg [3:0] pos;\n    reg [3:0] next_pos;\n\n    always @(*) begin\n        next_state = state;\n       if(a) begin\n           next_state = '0;\n       end\n    end\n    always @(posedge clk, posedge rst) begin\n        if(rst) begin\n            state <= '1;\n            // pos <= '0;\n        end else begin\n            state <= next_state;\n            pos <= next_pos;\n        end\n    end\nendmodule\n\n\nGives message sorry: Not all bits of 'state' are asynchronously set or reset. This is not currently supported in synthesis.\nTurns out it's actually because of pos, not state. uncommenting the line that sets pos to 0s gets rid of the error message."
+}

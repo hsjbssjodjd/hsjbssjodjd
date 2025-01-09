@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/steveicarus/iverilog/issues/717",
+    "Summary": "VCD dump: problem with real parameters",
+    "Description": "Found here: cocotb/cocotb#2975\nReproduce with this patch:\ndiff --git a/ivtest/ivltests/br_gh156.v b/ivtest/ivltests/br_gh156.v\nindex 296711232..a743c754e 100644\n--- a/ivtest/ivltests/br_gh156.v\n+++ b/ivtest/ivltests/br_gh156.v\n@@ -4,6 +4,7 @@\n //\n module main;\n    parameter [3:0] foo = 4'd5;\n+   parameter baz = 3.14;\n    localparam [3:0] bar = 7;\n    wire [3:0] bat = foo + bar;\nTest log reports:\nivtest/log/br_gh156.log\nsorry: Format 1 not implemented for getting real values.\nvvp: vpi_priv.cc:882: void vpip_real_get_value(double, s_vpi_value*): Assertion `0' failed.\nAborted"
+}

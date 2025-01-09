@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/3207",
+    "Summary": "Display of empty string appears as space",
+    "Description": "I notice that this statement:\n$display(\">%s<\", \"\");\n\nwill print > < (with a space) in Verilator, but >< (no space) by Modelsim and Icarus.  The SV 2017 spec is very brief on %s, but I assume that printing no space is preferable.\nI see that the generated C++ has this:\nVL_WRITEF(\"> <\\n\");\n\nso I assume that something in V3EmitCFunc.cpp has determined that the string is constant and can be inlined, but I can't see where this is happening.\nHere is a self-contained example: display_empty.tar.gz"
+}

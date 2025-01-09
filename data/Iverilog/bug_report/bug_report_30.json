@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/steveicarus/iverilog/issues/435",
+    "Summary": "SV: comment inside macro leads to syntax error",
+    "Description": "I believe comments inside a fancy text macro with arguments (that expands to multiple lines) is a vague area in LRM. However, the UVM library uses this \"feature\" and Icarus gives a compile error. Below is a reduced test.\nThanks\nSrini\nLine 3 below, i.e. 2nd line inside the macro leads to a compile error.\n`define uvm_field_utils_end \\\n     if(what__ inside {UVM_SETINT,UVM_SETSTR,UVM_SETOBJ}) begin \\\n        // remove all scopes recorded (through super and other objects visited before) \\\n          __current_scopes.pop_back()); \\\n        __m_uvm_status_container.m_uvm_cycle_scopes = __current_scopes; \\\n     end \\\n\nmodule m;\nendmodule : m"
+}

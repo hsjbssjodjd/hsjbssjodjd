@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/steveicarus/iverilog/issues/337",
+    "Summary": "Can set 2-state value to X",
+    "Description": "See this snippet:\nmodule main;\n\nfunction int bla();\nendfunction\n\nint x;\n\ninitial begin\n    $display(\"initial x = %d\", x);\n    $display(\"trying to force to 'x...\");\n    x = 'x;\n    $display(\"x = %d\", x);\n    $display(\"assigning from function...\");\n    x = bla();\n    $display(\"x = %d\", x);\nend\nendmodule\n\nResults in:\ninitial x =           0\ntrying to force to 'x...\nx =           0\nassigning from function...\nx =           x\n\nSystemVerilog standard says:\n\"When a 4-state value is automatically converted to a 2-state value, any unknown or high-impedance bits shall be converted to zeros.\""
+}

@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/4101",
+    "Summary": "Internal Error: V3DfgPeephole.cpp:1135: Mismatched RHS width",
+    "Description": "When casting two things to int and adding them, it seems to sometimes complain that the sizes of the operands don't match.  The following code works on v4.210 but fails on v5.008:\nmodule v(input logic t);\nendmodule\n\nmodule top(input logic [2:0] c);\n  v v1((int'(c) + int'($countones(c))) > 2);\nendmodule\n\n$ verilator -cc top.sv\n%Error: Internal Error: top.sv:5:17: ../V3DfgPeephole.cpp:1135: Mismatched RHS width\n    5 |   v v1((int'(c) + int'($countones(c))) > 2);\n      |                 ^\n                        ... See the manual at https://verilator.org/verilator_doc.html for more assistance.\n\nIt seems to work if I change the v module's port to int and remove the > 2.\nCentOS 7."
+}

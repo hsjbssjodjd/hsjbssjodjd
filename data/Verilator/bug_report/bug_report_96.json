@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/2095",
+    "Summary": "Should report error about missing cell before a dot error",
+    "Description": "I had strange error report, where I had a dotted reference to a internal signal of an instance.\nThe tool complained that couldn't find this signal, while the problem was that the module definition file was missing ...\nOnly when I removed the \"dotted\" references the tool reported the module definition was missing!"
+}

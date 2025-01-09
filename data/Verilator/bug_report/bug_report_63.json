@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/3215",
+    "Summary": "Internal error on string parameter in latest master",
+    "Description": "The following code:\nmodule test;\n   parameter A = \"\";\n\n   initial begin\n      if(A == \"TEST\") begin\n         $display(\"Test\");\n      end\n   end\nendmodule\n\nleads to the following error on latest master:\n%Error: Internal Error: test.sv:6:12: ../V3Number.cpp:2433: Number operation called with non-string argument: '64'h54455354\"\n                                    : ... In instance test\n    6 |       if(A == \"TEST\") begin\n      |            ^~\n                        ... See the manual at https://verilator.org/verilator_doc.html for more assistance.\n\nThis is working properly on latest stable version (4.214)."
+}

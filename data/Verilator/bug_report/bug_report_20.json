@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/4102",
+    "Summary": "Class with function that returns local struct type leads to internal error",
+    "Description": "I have the following code:\n// file `test.sv`\n\nclass some_class;\n\n  typedef struct {\n    string some_field;\n  } some_struct;\n\n\n  function some_struct some_func();\n  endfunction\n\nendclass\n\nWhen I compile this with verilator --binary test.sv I get:\nIn file included from Vtest__Syms.h:19,\n                 from Vtest.cpp:5,\n                 from Vtest__ALL.cpp:3:\nVtest___024unit__03a__03asome_class__Vclpkg.h:27:10: fatal error: Vtest___024unit__03a__03asome_class.h: No such file or directory\n   27 | #include \"Vtest___024unit__03a__03asome_class.h\"\n      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\ncompilation terminated.\n\nI played around with it a bit. If I move the typedef outside of the class it works. If I remove the function, it also works. It seems that it's the intersection of these two things that causes the issue."
+}

@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/steveicarus/iverilog/issues/460",
+    "Summary": "reg dynamic compile time crash",
+    "Description": "Hi,\nI tried below case :\nmodule test;\nreg a[];\nreg b[];\ninitial begin\nb = new[3];\nend\nendmodule\nit will crash:\nivl: eval_object.c:34: darray_new: Assertion `ivl_type_packed_dimensions(element_type) == 1' failed.\nI looked at the code, in PWire::elaborate_sig . found that for reg a[],  packed_dims will always be empty.\nBTW， could you please tell me how to use gdb with iverilog\nThanks"
+}

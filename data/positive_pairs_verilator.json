@@ -1,0 +1,317 @@
+{
+    "vector_bug_report_1.pt": [
+        "include_verilated_types.h.pt"
+    ],
+    "vector_bug_report_2.pt": [
+        "include_verilated_funcs.h.pt"
+    ],
+    "vector_bug_report_3.pt": [
+        "src_V3Width.cpp.pt"
+    ],
+    "vector_bug_report_4.pt": [
+        "src_V3EmitCFunc.cpp.pt"
+    ],
+    "vector_bug_report_5.pt": [
+        "src_V3LinkLevel.cpp.pt"
+    ],
+    "vector_bug_report_6.pt": [
+        "src_V3Task.cpp.pt"
+    ],
+    "vector_bug_report_7.pt": [
+        "src_V3Class.cpp.pt"
+    ],
+    "vector_bug_report_8.pt": [
+        "src_V3EmitCHeaders.cpp.pt"
+    ],
+    "vector_bug_report_9.pt": [
+        "src_V3DfgAstToDfg.cpp.pt"
+    ],
+    "vector_bug_report_10.pt": [
+        "src_V3Os.cpp.pt",
+        "src_V3Options.cpp.pt"
+    ],
+    "vector_bug_report_11.pt": [
+        "src_V3Common.cpp.pt"
+    ],
+    "vector_bug_report_12.pt": [
+        "src_V3Force.cpp.pt"
+    ],
+    "vector_bug_report_13.pt": [
+        "src_V3AstNodes.cpp.pt",
+        "src_V3AstNodeDType.h.pt",
+        "src_V3EmitCHeaders.cpp.pt",
+        "src_V3Class.cpp.pt",
+        "src_V3EmitCImp.cpp.pt",
+        "src_V3Common.cpp.pt"
+    ],
+    "vector_bug_report_14.pt": [
+        "src_V3EmitCSyms.cpp.pt"
+    ],
+    "vector_bug_report_15.pt": [
+        "src_V3Width.cpp.pt"
+    ],
+    "vector_bug_report_16.pt": [
+        "src_V3Begin.cpp.pt"
+    ],
+    "vector_bug_report_17.pt": [
+        "src_V3Width.cpp.pt"
+    ],
+    "vector_bug_report_18.pt": [
+        "src_V3EmitXml.cpp.pt"
+    ],
+    "vector_bug_report_19.pt": [
+        "src_V3LinkParse.cpp.pt"
+    ],
+    "vector_bug_report_20.pt": [
+        "src_V3Class.cpp.pt",
+        "src_V3File.cpp.pt",
+        "src_V3EmitCImp.cpp.pt"
+    ],
+    "vector_bug_report_21.pt": [
+        "src_V3DfgDfgToAst.cpp.pt"
+    ],
+    "vector_bug_report_22.pt": [
+        "src_V3Width.cpp.pt"
+    ],
+    "vector_bug_report_23.pt": [
+        "src_V3Const.cpp.pt"
+    ],
+    "vector_bug_report_24.pt": [
+        "src_V3Width.cpp.pt"
+    ],
+    "vector_bug_report_25.pt": [
+        "src_V3Width.cpp.pt",
+        "src_V3AstNodeDType.h.pt",
+        "src_V3WidthCommit.h.pt"
+    ],
+    "vector_bug_report_26.pt": [
+        "src_V3LinkDot.cpp.pt"
+    ],
+    "vector_bug_report_27.pt": [
+        "src_V3Number.cpp.pt"
+    ],
+    "vector_bug_report_28.pt": [
+        "src_V3Width.cpp.pt"
+    ],
+    "vector_bug_report_29.pt": [
+        "src_V3EmitCSyms.cpp.pt"
+    ],
+    "vector_bug_report_30.pt": [
+        "src_V3Width.cpp.pt"
+    ],
+    "vector_bug_report_31.pt": [
+        "src_V3LinkDot.cpp.pt"
+    ],
+    "vector_bug_report_32.pt": [
+        "src_V3Width.cpp.pt"
+    ],
+    "vector_bug_report_33.pt": [
+        "src_V3ParseImp.cpp.pt"
+    ],
+    "vector_bug_report_34.pt": [
+        "src_V3Case.cpp.pt"
+    ],
+    "vector_bug_report_35.pt": [
+        "src_V3Delayed.cpp.pt"
+    ],
+    "vector_bug_report_36.pt": [
+        "src_V3Width.cpp.pt"
+    ],
+    "vector_bug_report_37.pt": [
+        "src_V3Width.cpp.pt",
+        "src_V3WidthCommit.h.pt"
+    ],
+    "vector_bug_report_38.pt": [
+        "src_V3Case.cpp.pt"
+    ],
+    "vector_bug_report_39.pt": [
+        "src_V3LinkInc.cpp.pt",
+        "src_V3Width.cpp.pt"
+    ],
+    "vector_bug_report_40.pt": [
+        "src_V3Coverage.cpp.pt"
+    ],
+    "vector_bug_report_41.pt": [
+        "src_V3Const.cpp.pt"
+    ],
+    "vector_bug_report_42.pt": [
+        "src_V3Width.cpp.pt"
+    ],
+    "vector_bug_report_43.pt": [
+        "src_V3Width.cpp.pt"
+    ],
+    "vector_bug_report_44.pt": [
+        "src_V3LinkInc.cpp.pt",
+        "src_V3Task.cpp.pt",
+        "src_V3LinkLValue.cpp.pt"
+    ],
+    "vector_bug_report_45.pt": [
+        "src_V3EmitCModel.cpp.pt"
+    ],
+    "vector_bug_report_46.pt": [
+        "src_V3VariableOrder.cpp.pt"
+    ],
+    "vector_bug_report_47.pt": [
+        "src_V3Width.cpp.pt"
+    ],
+    "vector_bug_report_48.pt": [
+        "src_V3Width.cpp.pt"
+    ],
+    "vector_bug_report_49.pt": [
+        "src_V3Width.cpp.pt"
+    ],
+    "vector_bug_report_50.pt": [
+        "src_V3EmitCSyms.cpp.pt"
+    ],
+    "vector_bug_report_51.pt": [
+        "src_V3AstNodes.h.pt",
+        "src_V3Width.cpp.pt",
+        "src_V3Ast.h.pt"
+    ],
+    "vector_bug_report_52.pt": [
+        "src_V3Width.cpp.pt"
+    ],
+    "vector_bug_report_53.pt": [
+        "src_V3SchedTiming.cpp.pt"
+    ],
+    "vector_bug_report_54.pt": [
+        "src_V3Const.cpp.pt",
+        "src_V3Ast.h.pt"
+    ],
+    "vector_bug_report_55.pt": [
+        "src_V3Inst.cpp.pt"
+    ],
+    "vector_bug_report_56.pt": [
+        "src_V3Localize.cpp.pt"
+    ],
+    "vector_bug_report_57.pt": [
+        "src_V3Undriven.cpp.pt"
+    ],
+    "vector_bug_report_58.pt": [
+        "src_V3LinkDot.cpp.pt"
+    ],
+    "vector_bug_report_59.pt": [
+        "src_V3AstNodes.h.pt",
+        "include_verilated.cpp.pt",
+        "src_V3LinkLValue.cpp.pt",
+        "include_verilated_funcs.h.pt"
+    ],
+    "vector_bug_report_60.pt": [
+        "src_V3LinkCells.cpp.pt"
+    ],
+    "vector_bug_report_61.pt": [
+        "src_V3Width.cpp.pt"
+    ],
+    "vector_bug_report_62.pt": [
+        "src_V3Width.cpp.pt"
+    ],
+    "vector_bug_report_63.pt": [
+        "src_V3Width.cpp.pt"
+    ],
+    "vector_bug_report_64.pt": [
+        "src_V3EmitCFunc.cpp.pt",
+        "src_V3LinkResolve.cpp.pt"
+    ],
+    "vector_bug_report_65.pt": [
+        "src_V3Width.cpp.pt"
+    ],
+    "vector_bug_report_66.pt": [
+        "src_V3LinkParse.cpp.pt"
+    ],
+    "vector_bug_report_67.pt": [
+        "src_V3Const.cpp.pt"
+    ],
+    "vector_bug_report_68.pt": [
+        "src_V3Const.cpp.pt"
+    ],
+    "vector_bug_report_69.pt": [
+        "src_V3Width.cpp.pt"
+    ],
+    "vector_bug_report_70.pt": [
+        "src_V3Const.cpp.pt"
+    ],
+    "vector_bug_report_71.pt": [
+        "src_V3AstNodes.cpp.pt",
+        "src_V3LinkParse.cpp.pt",
+        "src_V3LinkLevel.cpp.pt"
+    ],
+    "vector_bug_report_72.pt": [
+        "src_V3AstNodes.cpp.pt"
+    ],
+    "vector_bug_report_73.pt": [
+        "src_V3Param.cpp.pt"
+    ],
+    "vector_bug_report_74.pt": [
+        "src_V3Const.cpp.pt"
+    ],
+    "vector_bug_report_75.pt": [
+        "src_V3LinkDot.cpp.pt"
+    ],
+    "vector_bug_report_76.pt": [
+        "src_V3Premit.cpp.pt"
+    ],
+    "vector_bug_report_77.pt": [
+        "src_V3Const.cpp.pt"
+    ],
+    "vector_bug_report_78.pt": [
+        "include_verilated.cpp.pt",
+        "src_V3EmitC.cpp.pt"
+    ],
+    "vector_bug_report_79.pt": [
+        "src_V3Const.cpp.pt"
+    ],
+    "vector_bug_report_80.pt": [
+        "src_V3Inst.cpp.pt"
+    ],
+    "vector_bug_report_81.pt": [
+        "src_V3Width.cpp.pt"
+    ],
+    "vector_bug_report_82.pt": [
+        "src_V3EmitC.cpp.pt"
+    ],
+    "vector_bug_report_83.pt": [
+        "src_V3Options.cpp.pt"
+    ],
+    "vector_bug_report_84.pt": [
+        "src_V3AstNodes.h.pt"
+    ],
+    "vector_bug_report_85.pt": [
+        "src_V3LinkLevel.cpp.pt"
+    ],
+    "vector_bug_report_86.pt": [
+        "src_V3AstNodes.cpp.pt",
+        "src_V3AstNodes.h.pt",
+        "src_V3CUse.cpp.pt"
+    ],
+    "vector_bug_report_87.pt": [
+        "src_V3Width.cpp.pt"
+    ],
+    "vector_bug_report_88.pt": [
+        "src_V3Width.cpp.pt"
+    ],
+    "vector_bug_report_89.pt": [
+        "src_V3LinkDot.cpp.pt"
+    ],
+    "vector_bug_report_90.pt": [
+        "src_V3Width.cpp.pt",
+        "include_verilated_vcd_sc.h.pt"
+    ],
+    "vector_bug_report_91.pt": [
+        "src_V3Inst.cpp.pt"
+    ],
+    "vector_bug_report_92.pt": [
+        "src_V3LinkCells.cpp.pt"
+    ],
+    "vector_bug_report_93.pt": [
+        "src_V3Waiver.cpp.pt"
+    ],
+    "vector_bug_report_94.pt": [
+        "src_V3Clock.cpp.pt"
+    ],
+    "vector_bug_report_95.pt": [
+        "src_V3Begin.cpp.pt"
+    ],
+    "vector_bug_report_96.pt": [
+        "src_V3LinkDot.cpp.pt"
+    ]
+}

@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/steveicarus/iverilog/issues/782",
+    "Summary": "C-style comment after include and timescale causes malformed include error message",
+    "Description": "C-style comment after `include causes malformed include error message:\n`include \"b.v\" /* c  */\na.v:1: error: malformed `include directive. Did you quote the file name?"
+}

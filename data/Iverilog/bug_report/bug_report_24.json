@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/steveicarus/iverilog/issues/498",
+    "Summary": "Incorrect error \"This assignment requires an explicit cast\"",
+    "Description": "When compiling the code below, the error \"This assignment requires an explicit cast\".  Both source and destination are the same type.\npackage pkg1;\ntypedef enum logic [1:0]\n{// Register (in DALU)\nR0     = 2'b00,\nR1     = 2'b01,\nR2     = 2'b10,\nR3     = 2'b11\n} reg_t;\nendpackage\nmodule test\n(input pkg1::reg_t r1);\nimport pkg1::*;\nreg_t r2;\nalways_comb\nr2 = r1;\nendmodule // test"
+}

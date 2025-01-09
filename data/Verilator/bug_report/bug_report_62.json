@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/3216",
+    "Summary": "$size returns wrong value for dynamic strings",
+    "Description": "Although not clear by my reading of IEEE, $size on a SystemVerilog string should return the length of the string times 8 (e.g. bit count)."
+}

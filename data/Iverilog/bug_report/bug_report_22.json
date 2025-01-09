@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/steveicarus/iverilog/issues/530",
+    "Summary": "Segmentation fault. for 11.0, two lines of code",
+    "Description": "See details here:\nhttps://github.com/armleo/iverilog_seg_fault_0\nOS: Ubuntu 21.04 on x86-64 PC.\nDo I need to build and run a newer version Iverilog to verify this issue?"
+}

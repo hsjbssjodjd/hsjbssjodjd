@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/3890",
+    "Summary": "Can't reference a class' field in a non-top module: Node has no type",
+    "Description": "Hi!\nVerilator fails to build the following code:\nclass VClass;\n    int t;\nendclass\n\nmodule VModule;\n\n   VClass c;\n\n   initial begin\n      int t;\n      c = new;\n      t = c.t;\n   end\nendmodule\n\nmodule VTop;\n   VModule foo;\nendmodule\n%Error: Internal Error: ../bad.v:12:9: ../V3Width.cpp:6251: Node has no type\n                                     : ... In instance VTop.foo\n-node: ASSIGN 0x13e805760 {c12aj} @dt=0x13e804b90@(sw32)\n   12 |       t = c.t;\n      |         ^\n\nThe error does not happen if the VTop module is commented out.\nzvord@Mac-mini-Ilia verilator % ./bin/verilator_bin --version                   \nVerilator 5.005 devel rev v5.004-70-g035bf13e4\n\nOS: macOS Ventura 13.1"
+}

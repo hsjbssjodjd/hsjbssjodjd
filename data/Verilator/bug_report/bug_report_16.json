@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/4144",
+    "Summary": "Cannot declare static variable with same name in different blocks of method",
+    "Description": "I have the following code:\n// file: test.sv\n\nmodule test;\n\n  function do_stuff();\n    begin: block0\n      static int some_int;\n    end\n    begin: block1\n      static int some_int;\n    end\n  endfunction \n\nendmodule\n\nWhen I compile with verilator --binary test.sv I get:\n%Error: test.sv:8:18: Duplicate declaration of signal: 'test.do_stuff__Vstatic__some_int'\n    8 |       static int some_int;\n      |                  ^~~~~~~~\n        test.sv:5:18: ... Location of original declaration\n    5 |       static int some_int;\n      |                  ^~~~~~~~\n%Error: Exiting due to 1 error(s)\n\nIt seems that some_int is put under do_stuff directly, not under do_stuff.block0 and do_stuff.block."
+}

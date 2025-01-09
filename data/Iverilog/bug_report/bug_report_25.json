@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/steveicarus/iverilog/issues/497",
+    "Summary": "crash when using slice of 2D array",
+    "Description": "The below example causes an assertion failure: netlist.cc:822: failed assertion indices.size()+1 == packed_dims().size().\nmodule top;\n    wire [3:0][2:0] arr;\n    assign arr[2+:2] = 1;\nendmodule\nHowever, the following equivalent example is accepted cleanly.\nmodule top;\n    wire [3:0][2:0] arr;\n    assign arr[3:2] = 1;\nendmodule\nRemoving the least significant dimension ([2:0]) also allows the original example to be accepted. The crash persists with more dimensions added."
+}

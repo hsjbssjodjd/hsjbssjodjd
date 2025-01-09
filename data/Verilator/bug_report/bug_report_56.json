@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/3286",
+    "Summary": "Removing LifePost optimization yields t_if_deep failure",
+    "Description": "The VarVertexType::PRE vertex carries an ordering constraint that is only an optimization, and ignoring it should still yield correct behaviour. Disabling this constraint in V3Order (by removing the edges to/from the VarVertexType::PRE vertices) however makes the t_if_deep test fail."
+}

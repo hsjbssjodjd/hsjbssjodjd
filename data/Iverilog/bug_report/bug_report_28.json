@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/steveicarus/iverilog/issues/445",
+    "Summary": "SV: default value for function argument as null",
+    "Description": "I get:\nivl_uvm_i445.sv:4: Error: Class/null r-value not allowed in this context.\nivl_uvm_i445.sv:4: error: Unable to evaluate null as a port default expression.\n2 error(s) during elaboration.\n\n\nCode:\npackage t_pkg;\n\n  virtual class uvm_component;\n    function new (string name = \"uvm_component\", uvm_component parent = null);\n    endfunction : new \n  endclass\n\n\nendpackage : t_pkg\n\nmodule m;\n\n  import t_pkg::*;\n\n  initial begin\n    $display (\"%m From code block\");\n  end\nendmodule"
+}

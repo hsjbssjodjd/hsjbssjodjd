@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/steveicarus/iverilog/issues/747",
+    "Summary": "assert: elab_net.cc:1028: failed assertion sig",
+    "Description": "This code produces an error in iverilog 11.0:\nmodule sub #(parameter WIDTH=8) (\n    input [WIDTH-1:0] x [2:0],\n    output [WIDTH-1:0] y\n);\n    assign y = 2 * x[2];\nendmodule\nmodule test #(parameter WIDTH=8) (\n    input [WIDTH-1:0] t\n);\n    sub #(.WIDTH(WIDTH)) m1(E[0], E[1]);\n    sub #(.WIDTH(WIDTH)) m2(E[1], E[2]);\n    sub #(.WIDTH(WIDTH)) m3(E[2], E[3]);\nendmodule\n\n$ iverilog -g2012 err.v\nerr.v:10: assert: elab_net.cc:1028: failed assertion sig"
+}

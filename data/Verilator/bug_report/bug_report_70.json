@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/3140",
+    "Summary": "internal error (div 0 arithmetic error) in V3Const.cpp:1340 (v4.212-20-g27c08a65)",
+    "Description": "This warning print statement will generate an internal error when nodep->declElWidth() == 0.\n            nodep->v3warn(SELRANGE,\n                          \"Selection index out of range: \"\n                              << (nodep->msbConst() / nodep->declElWidth()) << \":\"\n                              << (nodep->lsbConst() / nodep->declElWidth()) << \" outside \"\n                              << nodep->declRange().hiMaxSelect() << \":0\"\n                              << (nodep->declRange().lo() >= 0\n                                      ? \"\"\n                                      : (\" (adjusted +\" + cvtToStr(-nodep->declRange().lo())\n                                         + \" to account for negative lsb)\")));"
+}

@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/steveicarus/iverilog/issues/827",
+    "Summary": "Ternary operator with constants to $display()",
+    "Description": "Below is a test case.\nmodule test();\n   reg expected = 1;\n   initial begin\n      $display(\"Const Positive %s\", 1 ? \"yes\" : \"NO\");\n      $display(\"Const Negative %s\", !1 ? \"yes\" : \"NO\");\n      $display(\"Var Positive %s\", expected ? \"yes\" : \"NO\");\n      $display(\"Var Negative %s\", !expected ? \"yes\" : \"NO\");\n      $finish;\n   end\nendmodule\n\n\nI am using the WSL2 with Ubuntu 20.04 release of the iverilog and vvp.\n$ iverilog -V | head -n 1\nIcarus Verilog version 10.3 (stable) ()\nUnable to get version from \"/usr/lib/x86_64-linux-gnu/ivl/ivlpp -V\"\nUnable to get version from \"/usr/lib/x86_64-linux-gnu/ivl/ivl -V -C\"/tmp/ivrlh337f554a\" \\\n    -C\"/usr/lib/x86_64-linux-gnu/ivl/vvp.conf\"\"\n$ iverilog -Wall -g2005-sv test.v\n$ vvp a.out\nConst Positive yes\nConst Negative\nVar Positive yes\nVar Negative  NO\n\nThe Const Negative line does not supply the string 'NO'.  If the constants are verilog defines, then the use case becomes more apparent."
+}

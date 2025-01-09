@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/2768",
+    "Summary": "Dollar signs in file name are not escaped in generated cpp model and makefile",
+    "Description": "Verilator works well even though a module file name contains a dollar sign; However, the generated Cpp model and makefile also contain the dollar sign, so model build process fails."
+}

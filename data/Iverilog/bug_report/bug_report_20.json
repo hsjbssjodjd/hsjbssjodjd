@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/steveicarus/iverilog/issues/533",
+    "Summary": "catch illegal reference to genvar",
+    "Description": "iverilog (both v11 and the latest master) does not raise an error on the following illegal code.\nmodule top;\n    genvar i;\n    for (i = 100; i < 101; i = i + 1)\n        for (i = 100; i < 101; i = i + 1)\n            initial $display(\"%b %0d\", i, $bits(i));\nendmodule\nFrom Section 12.4.1 of IEEE 1364-2005:\n\nBecause this implicit localparam has the same name as the genvar, any reference to this name inside the loop generate block will be a reference to the localparam, not to the genvar. As a consequence, it is not possible to have two nested loop generate constructs that use the same genvar.\n\nOf course, creating another genvar which shadows the explicit localparam is legal, and this appears to work as expected."
+}

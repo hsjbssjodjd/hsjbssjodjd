@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/steveicarus/iverilog/issues/823",
+    "Summary": "Assertion firing on missing structure memeber",
+    "Description": "I'm using Icarus Verilog 12.0 (devel), running on WSL2, compiled directly from the head of the github repository, and I've pared my code down to a very small testcase:\nmodule struct_assert_test;\n\nstruct packed\n{\n  logic a,b;\n} s;\n\nassign s.a = 1;\nassign s.b = 0;\nassign s.c = 1;\n\nendmodule\n\nI'm assigning values to the two fields (a and b) that exist in the structure s, and then I'm assigning a value to a field that does not exist.  Rather than throwing a syntax error or giving a warning about not being able to find that field, I get an assertion failure:\nwlye@AMR-BU-L02782:~/foton$ iverilog -g2012 struct_assert_test.sv\nstruct_assert_test.sv:10: assert: elab_net.cc:640: failed assertion member\nAborted\nwlye@AMR-BU-L02782:~/foton$\n\nThe assertion that is being thrown is\nivl_assert(*this, member);\n\nwhich seems to make sense, however I am 99.5% unfamiliar with the code base so I would be extremely hesitant to propose an actual fix."
+}

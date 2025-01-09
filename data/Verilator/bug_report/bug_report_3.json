@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/4531",
+    "Summary": "Issue with streaming operator on packed structs since v5.016",
+    "Description": "Hi, while upgrading to v5.016, I get the internal error below when trying to use the streaming operator on a packed struct. This worked in prior versions.\n%Error: Internal Error: verilator_test_tb.sv:11:43: ../V3AstNodeDType.h:1133: call isCompound on subdata type, not reference\n   11 |   function automatic logic [63:0] reverse(data_t d);\n      |                                           ^~~~~~\n\nExample to reproduce:\n`default_nettype none\nmodule verilator_test_tb (\n  input wire [63:0] data_i,\n  output logic [63:0] data_o\n);\n\n  typedef struct packed {\n    logic [63:0] dummy;\n  } data_t;\n\n  function automatic logic [63:0] reverse(data_t d);\n    return {<<{d}};\n  endfunction\n\n  assign data_o = reverse(data_i);\n\nendmodule\n`default_nettype wire\n\nI found a work-around by adding a cast:\n  function automatic logic [63:0] reverse(data_t d);\n    return {<<{$bits(d)'(d)}};\n  endfunction\n\nVerilator version:\n% verilator --version\nVerilator 5.016 2023-09-16 rev UNKNOWN.REV"
+}

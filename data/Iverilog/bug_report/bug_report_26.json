@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/steveicarus/iverilog/issues/477",
+    "Summary": "Compilation error when slicing packed array with width specifier",
+    "Description": "module m(y, a);\n  output logic  [7:0] y;\n  input  wire  [39:0] a;\n\n  logic [3:0][9:0] t;\n\n  assign t = a; // 4x10b packed\n\n  assign y = t[2][9 -:8];  // ivl failure\n\n  // assign y = t[2][9:2]; // but this works\nendmodule\n\npb@fatcat lm_lib % iverilog -g2005-sv m.sv\nm.sv:9: assert: netlist.cc:2508: failed assertion packed.size() == 1\nsh: line 1: 22524 Done blah blah"
+}

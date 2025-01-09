@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/2565",
+    "Summary": "Calling a function on an object inside a package will some times result in an internal error",
+    "Description": "In the t_convert2string.* files in pull request #2564, I get an internal error when lpcm_pkg is not imported:\n%Error: Internal Error: t/t_convert2string.v:68:9: ../V3Width.cpp:4729: Node has no type\n: ... In instance t.test\n68 |       s = tr.convert2string();\n|         ^\n... See the manual and https://verilator.org for more assistance.\n%Warning: vlt/t_convert2string: Exec of perl failed: %Error: Internal Error: t/t_convert2string.v:68:9: ../V3Width.cpp:4729: Node has no type\nvlt/t_convert2string: %Error: Exec of perl failed: %Error: Internal Error: t/t_convert2string.v:68:9: ../V3Width.cpp:4729: Node has no type\nvlt/t_convert2string: FAILED: Exec of perl failed: %Error: Internal Error: t/t_convert2string.v:68:9: ../V3Width.cpp:4729: Node has no type\n==SUMMARY: Passed 0  Failed 1  Unsup 0  Time 0:00\n==SUMMARY: Passed 0  Failed 1  Unsup 0  Time 0:00\nIf lpcm_pkg is imported (as indicated in the comments) the test passes fine."
+}

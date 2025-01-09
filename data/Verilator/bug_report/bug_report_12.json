@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/4183",
+    "Summary": "release statements affect combo logic incorrectly",
+    "Description": "Verilator revision befb415, but the bug affects all v5 versions and some earlier ones.\nTest case:\n// verilator lint_off MULTIDRIVEN\nmodule t(input clk);\n  initial begin\n    $dumpfile(\"dump.vcd\");\n    $dumpvars;\n  end\n\n  logic [31:0] lhs1, lhs2, rhs;\n\n  always_comb lhs1 = rhs;\n  assign lhs2 = rhs;\n\n  always @(posedge clk) rhs = '1;\n\n  always @(negedge clk) begin\n    release lhs1;\n    release lhs2;\n  end\nendmodule\nWaveform:\n\nlhs1 and lhs2 are oscillating for some reason, when they should equal rhs.\nThe always_comb bug also appears on v4.228.\n\nThis seems to be causing a regression in Caliptra: chipsalliance/caliptra-rtl#79"
+}

@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/3214",
+    "Summary": "Unsupported error on array of file descriptors",
+    "Description": "The following code:\nmodule test;\n   integer f [1:0];\n   \n   initial begin\n      f[0] = $fopen(\"test.txt\", \"r\");\n   end\nendmodule\n\nResults in the following error:\n%Error-UNSUPPORTED: test.sv:6:14: Unsupported: $fopen/$fclose/$f* descriptor must be a simple variable\n    6 |       f[0] = $fopen(\"test.txt\", \"r\");\n      |              ^~~~~~\n                    ... For error description see https://verilator.org/warn/UNSUPPORTED?v=4.214\n%Error: Exiting due to 1 error(s)\n        ... See the manual at https://verilator.org/verilator_doc.html for more assistance.\n\nIs there any workaround for this that doesn't involve defining a separate integer per file descriptor or a potential fix?"
+}

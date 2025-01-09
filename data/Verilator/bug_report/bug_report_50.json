@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/3495",
+    "Summary": "--output-split-cfuncs segfaulting or generating bad code with a $dump systemtask",
+    "Description": "I've added two tests here -\nmaster...VarunKoyyalagunta:verilator:bug/trace-split-cfuncs\nWith a $dump systemtask and cfuncs being split, verilator segfaults because the file pointer is null.\nIf there is also a DPI export, the output _traceDump code is written into the middle of the DPI code, and gcc fails.\nThe tests have --output-split-cfuncs 1 to simplify them, but in our codebase we are seeing the same errors without --output-split-cfuncs specified.\nTried with 4.220 and latest master as of writing (f4efcbd)\nI have a naive fix here that causes my tests to pass -\nVarunKoyyalagunta/verilator@bug/trace-split-cfuncs...VarunKoyyalagunta:verilator:bugfix/trace-split-cfuncs-write-to-base"
+}

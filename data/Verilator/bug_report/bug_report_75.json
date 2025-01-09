@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/2957",
+    "Summary": "Support recursive functions (and/or better error)",
+    "Description": "The code below builds on Cadence Xcelium but fails in Verilator:\n/verilator --version\nVerilator 4.200 2021-03-12 rev v4.110-43-g5022e81af (mod)\n./verilator --cc test2.sv\n%Error: test2.sv:6:16: Found definition of 'log2_f' as a VAR but expected a task/function\n    6 |         return log2_f(a/2) + 1;\n      |                ^~~~~~\n%Error: Exiting due to 1 error(s)\n\n-- test2.sv --\nmodule fred;\n   function automatic int log2_f(int a);\n      if (a == 1)\n        return 0;\n      else\n        return log2_f(a/2) + 1;\n   endfunction // log2_f\nendmodule"
+}

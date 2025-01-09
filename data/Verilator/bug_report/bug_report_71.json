@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/3116",
+    "Summary": "Internal Error: display has no time units",
+    "Description": "Hello,\nI'm linting my code with Verilator and I get this error message:\n%Error: Internal Error: dep/svlogger.sv:133:9: ../V3Width.cpp:3864: display %t has no time units\nThe code is in this repo:\nhttps://github.com/dpretet/friscv\nusing this one as submodule:\nhttps://github.com/dpretet/svlogger/blob/main/svlogger.sv\nTo reproduce, once you cloned FRISCV, launch these commands at the root level:\ngit submodule update --init\n./flow.sh lint\n\nI tried with Verilator v4.200, currently available in macOS Brew.\nIs it possible to disable in any way some file or portion of code of Verilator analysis?\nCan time unit be setup in Verilator linting as I did in my test bench?\nWould you be willing to try to fix Verilator yourself with assistance? Why not.\nThanks for your help!\nDamien"
+}

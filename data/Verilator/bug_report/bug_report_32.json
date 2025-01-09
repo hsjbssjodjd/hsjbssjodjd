@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/3868",
+    "Summary": "Call abstract class' ctor from a non-abstract class' ctor",
+    "Description": "Hello!\nThe following code does not compile:\nvirtual class foo;\n    function new(); endfunction\nendclass\n\nclass bar extends foo;\n    function new();\n        super.new();\n    endfunction\nendclass\nThe error message:\n\nIllegal to call 'new' using an abstract virtual class (IEEE 1800-2017 8.21)\n\nThe referenced chapter explicitly allows to call a constructor of the abstract class if the call is initiated in an non-abstract class constructor:\n\nAn object of an abstract class shall not be constructed directly. Its constructor may only be called indirectly through the chaining of constructor calls originating in an extended non-abstract object.\n\nVersion: Verilator 5.004 2022-12-14 rev UNKNOWN.REV\nOS: macOS Ventura 13.1"
+}

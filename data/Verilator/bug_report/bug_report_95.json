@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/2267",
+    "Summary": "Regression with hierarchical references used inside a function",
+    "Description": "Hi,\nI'm getting a problem when running some code with hierarchical references, which results in an internal error:\n$ verilator --cc failure.sv\n%Error: Internal Error: failure.v:19:37: ../V3LinkDot.cpp:2304: Couldn't resolve inlined scope 'accessor_block' in: mod_a.u_a_mon.accessor_block\n   19 |          bit read_x = mod_a.u_inner.x;\n      |                                     ^\n                        ... See the manual and https://verilator.org for more assistance.\n\nmodule mod_a;\n   mod_inner u_inner;\n   mod_a_mon u_a_mon;\nendmodule : mod_a\n\nmodule mod_inner;\n   logic x;\nendmodule : mod_inner\n\nmodule mod_a_mon;\n   function void accessor;\n      begin : accessor_block\n         bit read_x = mod_a.u_inner.x;\n      end\n   endfunction\nendmodule\nThe above code was reduced from an internal design which is currently using verilator version 4.010 (and attempting to update to version 4.032). Git bisect suggests that the issue was introduced in #2176.\nThanks,\nJames"
+}

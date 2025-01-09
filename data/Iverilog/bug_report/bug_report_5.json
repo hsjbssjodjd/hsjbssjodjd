@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/steveicarus/iverilog/issues/756",
+    "Summary": "Error in determine width of the unbased unsized constant '1 in port assignment",
+    "Description": "Example code:\nmodule mod0 (input [3:0] x);\n    initial begin\n        $display(\"%b\", x);\n        $finish;\n    end\nendmodule\n\nmodule test;\n    mod0 m ('1);\nendmodule\nOutput:\ntest.sv:9: warning: Port 1 (x) of mod0 expects 4 bits, got 1.\ntest.sv:9:        : Padding 3 high bits of the port.\n0001\n\nOther simulators (Verilator, Modelsim) and synthesizers (Yosys, Quartus, Vivado) assigns value 'b1111 to port."
+}

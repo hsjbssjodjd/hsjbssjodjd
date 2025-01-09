@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/steveicarus/iverilog/issues/732",
+    "Summary": "Assertion failure on specparam declaration of delay value when enclosing module is instantiated more than once.",
+    "Description": "This short example demonstrates the problem:\nmodule Buffer(output Y, input A);\n\n  assign Y = A;\n             \n  specify\n    specparam tpdLH = (0.01:0.01:0.01);\n    specparam tpdHL = (0.01:0.01:0.01);\n  endspecify\nendmodule\n  \nmodule Buffer1(output Y, input A);\n  Buffer inst(.Y(Y), .A(A));\nendmodule\n  \nmodule Buffer2(output Y, input A);\n  Buffer inst(.Y(Y), .A(A));\nendmodule\n\nresulting in\n% iverilog test.v \ntest.v:6: warning: choosing typ expression.\ntest.v:7: warning: choosing typ expression.\ntest.v:7: assert: ../source/net_design.cc:700: failed assertion param_type\n\nThis only occurs in development. v11 compiles the above example without error."
+}

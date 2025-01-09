@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/3744",
+    "Summary": "Fault on pre/postincrement in delay block",
+    "Description": "The following code with a delayed increment causes a segfault.\n@kbieganski perhaps you could take a look? Thanks.\nmodule t;\n   int   ia;\n   int   ib;\n\n   initial begin\n      ia = 0;\n      #1 ib = ++ia;\n      #1\n        if (ia !== ib) $stop;\n\n      #1 ib = ia++;\n      #1\n        if (ia == ib) $stop;\n      #10;\n\n      $write(\"*-* All Finished *-*\\n\");\n      $finish;\n   end\nendmodule"
+}

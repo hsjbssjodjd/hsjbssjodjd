@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/3777",
+    "Summary": "Error when casting to typedef with parameterized logic",
+    "Description": "Test case here: https://github.com/verilator/verilator/pull/3776/files\nmodule t\n#(\n parameter type data_t = logic\n)\n(    \n    input data_t[7:0] in_data\n);\n\n    typedef data_t[7:0] in_data_t;\n\n    in_data_t out_data; \n    always_comb out_data = in_data_t'(in_data); \nendmodule\n\nResults in\n%Error-UNSUPPORTED: t/t_cast_param_logic.v:19:28: Unsupported: static cast to 'data_t[7:0]' from 'data_t[7:0]'\n                                                : ... In instance t\n   19 |     always_comb out_data = in_data_t'(in_data); \n      |                            ^~~~~~~~~\n                    ... For error description see https://verilator.org/warn/UNSUPPORTED?v=5.003"
+}

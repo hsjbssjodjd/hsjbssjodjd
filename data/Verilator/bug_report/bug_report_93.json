@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/2429",
+    "Summary": "Generated waivers for multiline are incorrect",
+    "Description": "Multiline warnings cause issues with waiver files, for example VARHIDDEN\n%Warning-VARHIDDEN: ../src/openhw_cv32e40p_core_0.1/rtl/riscv_id_stage.sv:57:13: Declaration of signal hides declaration in upper scope: 'WAPUTYPE'\n   57 |   parameter WAPUTYPE          =  0,\n      |             ^~~~~~~~\n                    ../src/openhw_cv32e40p_core_0.1/rtl/include/apu_core_package.sv:38:13: ... Location of original declaration\n   38 |   parameter WAPUTYPE         =  0;\n      |       \n\nTruncate and add a wildcard star solves it, maybe this should be done when writing."
+}

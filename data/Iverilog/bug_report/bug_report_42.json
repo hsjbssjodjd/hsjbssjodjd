@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/steveicarus/iverilog/issues/219",
+    "Summary": "SystemVerilog explicit resizing and signedness",
+    "Description": "Consider the following Verilog file Main.sv:\nmodule Main();\n\n   logic[2:0] a = 3'b111;\n   logic signed[2:0] a_signed = 3'b111;\n\n   logic[2:0] b = 0;\n\n   logic[3:0] c0;\n   logic[3:0] c1;\n\n   initial begin\n      c0 = 4'($signed(a)) + b;\n      c1 = 4'(a_signed) + b;\n\n      $display(\"c0: %b\", c0);\n      $display(\"c1: %b\", c1);\n\n      $finish();\n   end\n\nendmodule\n\nDoing iverilog -g2012 Main.sv && ./a.out results in\nc0: 0111\nc1: 0111\n\nIs this really correct? Consider what the SystemVerilog-2017 standard (I don't have access to the 2012 version) says on p. 133:\n\nThe signedness shall pass through unchanged, i.e., the signedness of the result shall be the self-determined signedness of the expression inside the cast.\n\nShouldn't both c0 and c1 be 1111?"
+}

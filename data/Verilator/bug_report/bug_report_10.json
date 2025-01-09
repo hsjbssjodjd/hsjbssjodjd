@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/4215",
+    "Summary": "Linting produced error when -I is used",
+    "Description": "Using Verilator in the OpenLane flow produces a linting fail, which is documented here: The-OpenROAD-Project/OpenLane#1811\nIt seems like verilated_std.sv is auto-included multiple times, triggering an error the 2nd time.\nVerilator version: 947402b\nAddition info on OpenLane can be provided by @kareefardi"
+}

@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/3714",
+    "Summary": "Internal Error: V3DfgPeephole.cpp:843: Mismatched RHS width",
+    "Description": "Hi, I found a bug in Verilator 5.001 (Compiled commit: ed93a111c285ce36e185ed45a45cf9e0d33c9b6a).\nThis is the minimal testcase I've managed to write:\nmodule t (\n   input clk\n );\n   typedef struct packed {\n        logic signed [63:0] b;\n    } a_t;\n\n    a_t a_r, a_n;\n    logic signed [63:0] b;\n    logic res;\n\n    assign b = a_r.b;\n\n    always_comb begin\n        a_n = a_r;\n        res = '0;\n        if (b inside {1, 2}) begin\n            res = 1'b1;\n        end\n    end\n\n    always_ff @(posedge clk ) begin\n       a_r <= a_n;\n    end    \n\nendmodule\nThe following internal error is produced:\n%Error: Internal Error: t_peephole_inside.sv:18:26: ../V3DfgPeephole.cpp:843: Mismatched RHS width\n   18 |         if (b inside {1, 2}) begin\n      |                          ^\n                        ... See the manual at https://verilator.org/verilator_doc.html for more assistance."
+}

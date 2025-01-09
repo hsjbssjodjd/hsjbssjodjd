@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/3189",
+    "Summary": "Internal error of duplicate declaration when using generate blcok.",
+    "Description": "Hi\nI'm using the master branch of 'Verilator 4.215 devel rev v4.214-17-gfdbf465e'\ndemo:\nmodule t (\n);\n\nparameter A = 0;\nparameter B = 0;\nparameter C = 0;\n\ngenerate\n    if (A == 1)\n        integer i;\n    else if (C == 1)\n        integer i;\n    else\n        integer i;\nendgenerate\n\ngenerate\n    if (B == 1)\n        integer i;\n    else if (C == 1)\n        integer i;\n    else\n        integer i;\nendgenerate\n\nendmodule\n%Error: t.v:24:17: Duplicate declaration of signal: 't.genblk1.i'\n   24 |         integer i;\n      |                 ^\n        t.v:15:17: ... Location of original declaration\n   15 |         integer i;\n      |                 ^\n%Error: Exiting due to 1 error(s)\nI think this would be a problem cause integer i never actually duplicate in this demo.\nI tried more tags and found this problem exist in tag v4.108 ~ v4.204, but not the previous ones."
+}

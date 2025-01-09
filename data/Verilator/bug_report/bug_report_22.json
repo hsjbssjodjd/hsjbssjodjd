@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/4098",
+    "Summary": "Calling another function in new() gives false error on assignement of const variable",
+    "Description": "I have a class with a const variable assigned in the constructor, but before that assignment there is another statement:\n// file `test.sv`\n\nclass foo;\n\n  const string s;\n\n\n  function new();\n    int dummy = some_func();\n    s = \"foo\";\n  endfunction\n\n\n  function int some_func();\n  endfunction\n\nendclass\n\nWhen I call verilator --binary test.sv, I get:\n%Error: test.sv:8:5: Assigning to const variable: 's'\n    8 |     s = \"foo\";\n      |     ^\n%Error: Exiting due to 1 error(s)\n\nconst variables generally work, as removing the line with int dummy causes the code to compile. It's just this statement that causes the compile error."
+}

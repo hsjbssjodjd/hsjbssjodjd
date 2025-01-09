@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/3044",
+    "Summary": "Incorrect $write printout",
+    "Description": "Following is the test verilog\nmodule test(\n    input clk\n);\n\nreg [31: 0] cnt;\n\ninitial\nbegin\n    cnt = 'd0;\nend\n\nalways @(posedge clk)\nbegin\n    cnt <= cnt + 1;\nend\n\nalways @*\nbegin\n    if (cnt > 1)\n\t$finish;\n\n    $write(\"%08x\\n\", {16'h0, cnt[15:0]});\n    $write(\"%08x\\n\", {16'h0, cnt[31:16]}); // incorrect printout here\nend\n\nendmodule\n\nExpected output is\n00000000\n00000000\n00000001\n00000000\n- test.v:20: Verilog $finish\n00000002\n00000000\n\nBut the actual output is\n00000000\n0000\n00000001\n0000\n- test.v:20: Verilog $finish\n00000002\n0000\n\nI beleive that this commit cause this issue.\n6c9c16c\nIf I comment out \"TREEOP (\"AstAnd {$lhsp.castConst, matchMaskedShift(nodep)}\", \"DONE\");\" at src/V3Const.cpp line 3048, the issue is gone."
+}

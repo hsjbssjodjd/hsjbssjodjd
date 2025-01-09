@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/steveicarus/iverilog/issues/527",
+    "Summary": "SystemVerilog reduction operation fails with expr_type_ != IVL_VT_NO_TYPE",
+    "Description": "Minimal failing example:\ntypedef struct packed {\n    union packed {\n        logic[2:0] a;\n        logic[2:0] b;\n    } u;\n} s1;\n\nmodule top(input s1 inp, output logic out);\n    assign out = | inp.u.a;\nendmodule\nFails with the following\n$ iverilog test.sv -o build/a.out -g2012\ntest.sv:10: assert: elab_expr.cc:6330: failed assertion expr_type_ != IVL_VT_NO_TYPE\nAborted (core dumped)\n\nHowever, assign out = | (inp.u.a | 0) succeeds. As does a union by itself:\ntypedef union packed {\n    logic[2:0] a;\n    logic[2:0] b;\n} s1;\n\nmodule top(input s1 inp, output logic out);\n    assign out = | inp.a;\nendmodule"
+}

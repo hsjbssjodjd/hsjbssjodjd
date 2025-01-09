@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/2525",
+    "Summary": "Queue within classes",
+    "Description": "What would you like added/supported?\nenable object.queue.push_back(). Currently it gives\n%Error-UNSUPPORTED: t.sv:25:19: Unsupported: Non-variable on LHS of built-in method 'push_back'\n                                   : ... In instance tb_top\n   25 |         c2[0].que.push_back(10);  \n      |                   ^~~~~~~~~\n%Error: Exiting due to 1 error(s)\n\nCan you attach an example that runs on other simulators?  (Must be openly licensed, ideally in test_regress format.)\nmodule t();\n    class Cls;\n        int que[$];\n\n        task push_data(int val);\n            que.push_back(val);\n        endtask\n    endclass\n\n    initial begin\n        Cls c2 [1:0];\n\n        c2[0] = new();\n\n        c2[0].push_data(20);                               // Works\n\n        $display(\"size: %d\", c2[0].que.size());            // Works\n\n        c2[0].que.push_back(10);                       // Unsupported\n    end\n\nendmodule\n\nMay we assist you in trying to fix this yourself?\nyes"
+}

@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/steveicarus/iverilog/issues/433",
+    "Summary": "SV: Q pop_back with return value ignored gives error",
+    "Description": "iverilog 12.0 devel version\nbb.sv:10: error: Enable of unknown task ``__current_scopes.pop_back''.\n\nCode\nmodule m;\n  int __current_scopes [$];\n  int a;\n\n  initial begin\n    __current_scopes.push_front(10);\n    // WORKS \n    // a = __current_scopes.pop_back(); \n    __current_scopes.pop_back(); \n  end\n\nendmodule : m"
+}

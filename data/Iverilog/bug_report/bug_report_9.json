@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/steveicarus/iverilog/issues/674",
+    "Summary": "Elaborator segfault during function evaluation",
+    "Description": "Hello,\nThere is a segfault in the elaborator when it attempts to evaluate constant functions which access arrays out-of-bounds, as if some bounds check where missing. Compiling the code below (iverilog test.v) segfaults every time.\nI checked version 11.0 (debian stable) and the latest git: both segfault on this code.\nmodule test;\n\nfunction func;\ninput x;\n\ninteger i;\nreg [5 - 1:0] c[1:0];\nbegin\n        for (i = 0; i < 10; i = i + 1)\n                c[-i] = 123;\n\n        func = 0;\nend\nendfunction\n\nlocalparam X = func(0);\n\nendmodule"
+}

@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/steveicarus/iverilog/issues/437",
+    "Summary": "SV: Multiple packages leads to crash",
+    "Description": "Hi,\nUsing iverilog 12.0 devel, latest build. If I extend a class from one package in another I get a crash. Code and log below. If I move them to the same package it works.\nThanks\nSrini\npackage ivl_uvm_pkg;\n  virtual class uvm_test;\n  endclass : uvm_test \nendpackage : ivl_uvm_pkg\n\npackage test_pkg;\n  import ivl_uvm_pkg::*;\n  class sanity_test extends uvm_test;\n  endclass : sanity_test \nendpackage : test_pkg\n\n\nmodule m;\n\n  import ivl_uvm_pkg::*;\n  import test_pkg::*;\n\n\nendmodule : m\n\nLog:\niverilog -g2012 ivl_uvm_i436.sv\nsh: line 1: 28072 Done                    /usr/local/lib/ivl/ivlpp -L -F\"/var/folders/rk/7dbwr18d6f9g7w9yqb06s6yh0000gn/T//ivrlg21c1ead4a\" -f\"/var/folders/rk/7dbwr18d6f9g7w9yqb06s6yh0000gn/T//ivrlg1c1ead4a\" -p\"/var/folders/rk/7dbwr18d6f9g7w9yqb06s6yh0000gn/T//ivrli1c1ead4a\"\n     28073 Segmentation fault: 11  | /usr/local/lib/ivl/ivl -C\"/var/folders/rk/7dbwr18d6f9g7w9yqb06s6yh0000gn/T//ivrlh1c1ead4a\" -C\"/usr/local/lib/ivl/vvp.conf\" -- -"
+}

@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/3616",
+    "Summary": "Typedef derived class names make tests fail when used",
+    "Description": "t_class_typedef.zip\nThe example uploaded here is basically the t_class1 test, but modified to use a class name defined in a typedef.\nThe modification makes Verilator produce the following errors:\n%Error: t/t_class_typedef.v:14:7: Logical operator IF expects a non-complex data type on the If.\n                                : ... In instance t\n-node: IF 0x555556ad00c0 <e53> {d14ah}\n   14 |       if (c) $stop;\n      |       ^~ \n%Error: t/t_class_typedef.v:18:11: Logical operator LOGNOT expects a non-complex data type on the LHS. \n                                 : ... In instance t\n-node: LOGNOT 0x555556ace4d0 <e96> {d18al} @dt=0x555556a285b0@(G/w1)\n   18 |       if (!c) $stop;\n      |           ^"
+}

@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/3241",
+    "Summary": "Parameter not properly overwritten by -G option if an imported package contains a parameter with the same name",
+    "Description": "Verilog code:\npackage pack_a;\n   parameter PARAM_A = 0;\nendpackage : pack_a\n\nimport pack_a::*;\n\nmodule test(\n            input clk,\n            input reset\n            );\n\n   parameter PARAM_A = 0;\n\n   initial begin\n      $display(PARAM_A);\n      $finish;\n   end\n\nendmodule\n\nCommand line:\nverilator --cc --timescale-override 1ps/1ps test.sv --top-module test --exe --build main.cpp -GPARAM_A=1\n\nResult:\n          0\n- test.sv:16: Verilog $finish\n\nExpected result:\n          1\n- test.sv:16: Verilog $finish"
+}

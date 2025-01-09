@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/4593",
+    "Summary": "Internal fault when using clocking block",
+    "Description": "Apologies if I am doing something wrong - I am still very new to Verilator.\nWhen attempting to verilate a pretty simple module that uses a clocking block, I get an internal fault error.\nCommenting out the clocking block fixes the issue and I am able to proceed.\nExample file test.sv\nmodule tb();\n    logic clk = 0;\n    logic x;\n    logic y;\n\n    always #1ns clk = ~clk;\n\n    clocking cb @(posedge clk);\n        output #1ns x;\n        input #1step y;\n    endclocking\n\n    initial begin\n        repeat(10) @(posedge clk);\n        $finish();\n    end\nendmodule\nCommand-line & error\n$ ./verilator/bin/verilator --sv --binary  test.sv \n%Error: Verilator internal fault, sorry. Suggest trying --debug --gdbbt\n%Error: Command Failed ulimit -s unlimited 2>/dev/null; exec /home/alex/test_verilator/verilator/bin/verilator_bin --sv --binary test.sv\nVersion & OS\nI tried on both:\n\nVerilator 5.017 devel rev v5.014-213-g7b12f6a1d\nVerilator 5.016 2023-09-16 rev v5.014-149-g57c816f90\n\nUbuntu 22.04"
+}

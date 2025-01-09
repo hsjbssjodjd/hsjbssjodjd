@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/steveicarus/iverilog/issues/928",
+    "Summary": "implicitly importing a package , iverilog cannot find declarations in package.",
+    "Description": "pkt as follows:\n`timescale 1ps/1ps\npackage test_pkt;\n    parameter A = 3'd0;\n    parameter B = 3'd2;\n    function [3:0] add;\n        input [3:0] a;\n        input [3:0] b;\n\n        add = a+b;\n    endfunction\nendpackage\n\ntest.sv as follows:\nimport test_pkt::*;\n\n`timescale 1ps/1ps\nmodule test;\n\nreg[3:0] to;\n\ninitial begin\n    to = add(A,B);\n    # 100ns\n    $finish();\nend\n    \nendmodule\n\ncompile with:\niverilog -g2012 *.sv\nERROR results:\ntest.sv:9: error: No function named `add' found in this context (test).\n1 error(s) during elaboration."
+}

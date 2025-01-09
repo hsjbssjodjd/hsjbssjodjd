@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/3613",
+    "Summary": "Compilation error - foreach on map inside a task",
+    "Description": "Getting this error\n make\n%Error: Internal Error: tb_top.sv:8:17: ../V3Task.cpp:127: No scope for var\n    8 |     foreach(map[key]) $display(\"key: %0d\", key);\n      |                 ^~~\n                        ... See the manual at https://verilator.org/verilator_doc.html for more assistance.\nmake: *** [Makefile:65: build/tb_top.mk] Error 1\n\n\nSource\nmodule tb_top (\n  input v_clk\n);\n\n  int map[int];\n\n  task disp();\n    foreach(map[key]) $display(\"key: %0d\", key);\n  endtask\n\n  initial begin\n    for (int i=0; i<10; i++) map[i] = i+10;\n    disp();\n  end\n\nendmodule\n\nversion\nverilator --version\nVerilator 4.227 devel rev v4.226-17-g45d622e4"
+}

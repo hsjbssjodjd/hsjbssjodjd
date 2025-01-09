@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/steveicarus/iverilog/issues/386",
+    "Summary": "Erroneous explicit cast required error",
+    "Description": "The following code results in an erroneous \"error: This assignment requires an explicit cast.\"\nThis is using latest main branch.\nThanks,\n-Rad\n-------------- test.sv ----------------\nmodule test;\ntypedef enum logic [8:0]\n{ILLEGAL,\nIA,\nIB\n} inst_t;\ninst_t        ipb_inst;\ntypedef struct packed\n{//\ninst_t        inst;\nlogic \t    iw;\n} ipb_data_t;\nipb_data_t ipb_d;\nalways\nipb_inst = ipb_d.inst;\nendmodule"
+}

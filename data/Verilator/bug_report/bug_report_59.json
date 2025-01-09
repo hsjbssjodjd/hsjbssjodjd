@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/3238",
+    "Summary": "$random doesn't update seed",
+    "Description": "I don't know if $random is a priority, since I don't believe it's in SV?  But I noticed that this example (random_seed.tar.gz):\nfor(i=0; i<5; i=i+1) begin\n  val = $random(seed);\n  $display (\"seed=%h, val=%h\", seed, val);\nend\n\ngives the following output for Icarus and QuestaSim:\nseed=0011ea9e, val=8011ec00\nseed=e1e0e687, val=61e0e9c3\nseed=3354751c, val=b3547666\nseed=d9b0336d, val=59b035b3\nseed=7822b74a, val=f822b8f0\n\nindicating that the seed is being updated on each call.  For Verilator, the seed is not changed and so $random returns the same value on every call:\nseed=00000011, val=ffffffdc\nseed=00000011, val=ffffffdc\nseed=00000011, val=ffffffdc\nseed=00000011, val=ffffffdc\nseed=00000011, val=ffffffdc\n\nThe IEEE 1364-2005 spec doesn't seem to clarify how the seed is used.  So I'd guess that either of these interpretations is possible?"
+}

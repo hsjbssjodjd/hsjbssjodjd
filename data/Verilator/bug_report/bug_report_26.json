@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/3995",
+    "Summary": "Broken tracking of symbol entries when inheriting classes",
+    "Description": "Consider the following example:\nclass Foo;\nendclass\n\nclass Bar extends Foo;\n   int m_field = get_1();\n\n   function int get_1();\n      return 1;\n   endfunction\nendclass\nThis produces the following error:\n%Error: call_method_declared_after.sv:5:18: Can't find definition of task/function: 'get_1'\n    5 |    int m_field = get_1();\n      |                  ^~~~~\n\nWhen I remove extends Foo from the code, or swap the order of definitions of m_field and get_1, the example passes just fine.\nI'm using the latest version of Verilator under Linux (Gentoo):\nVerilator 5.007 devel rev v5.006-120-gfaf3804b9"
+}

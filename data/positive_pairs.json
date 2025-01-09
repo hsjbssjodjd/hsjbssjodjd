@@ -1,0 +1,146 @@
+{
+    "vector_bug_report_1.pt": [
+        "vvp_vpi_const.cc.pt"
+    ],
+    "vector_bug_report_2.pt": [
+        "elab_net.cc.pt"
+    ],
+    "vector_bug_report_3.pt": [
+        "elab_sig.cc.pt"
+    ],
+    "vector_bug_report_4.pt": [
+        "lexor.lex.pt"
+    ],
+    "vector_bug_report_5.pt": [
+        "elaborate.cc.pt"
+    ],
+    "vector_bug_report_6.pt": [
+        "elab_net.cc.pt",
+        "elaborate.cc.pt"
+    ],
+    "vector_bug_report_7.pt": [
+        "net_design.cc.pt"
+    ],
+    "vector_bug_report_8.pt": [
+        "vpi_sys_vcd.c.pt"
+    ],
+    "vector_bug_report_9.pt": [
+        "net_func_eval.cc.pt"
+    ],
+    "vector_bug_report_10.pt": [
+        "t-dll-proc.cc.pt"
+    ],
+    "vector_bug_report_11.pt": [
+        "vpi_sys_random.c.pt"
+    ],
+    "vector_bug_report_12.pt": [
+        "synth2.cc.pt"
+    ],
+    "vector_bug_report_13.pt": [
+        "tgt-vvp_vvp_scope.c.pt"
+    ],
+    "vector_bug_report_14.pt": [
+        "vvp_array.cc.pt"
+    ],
+    "vector_bug_report_15.pt": [
+        "vvp_vthread.cc.pt"
+    ],
+    "vector_bug_report_16.pt": [
+        "netlist.cc.pt",
+        "elab_scope.cc.pt"
+    ],
+    "vector_bug_report_17.pt": [
+        "vvp_array.cc.pt"
+    ],
+    "vector_bug_report_18.pt": [
+        "PWire.cc.pt"
+    ],
+    "vector_bug_report_19.pt": [
+        "net_nex_input.cc.pt"
+    ],
+    "vector_bug_report_20.pt": [
+        "elab_scope.cc.pt"
+    ],
+    "vector_bug_report_21.pt": [
+        "net_func_eval.cc.pt"
+    ],
+    "vector_bug_report_22.pt": [
+        "elaborate.cc.pt"
+    ],
+    "vector_bug_report_23.pt": [
+        "elab_expr.cc.pt"
+    ],
+    "vector_bug_report_24.pt": [
+        "pform.cc.pt"
+    ],
+    "vector_bug_report_25.pt": [
+        "elab_expr.cc.pt",
+        "elab_lval.cc.pt",
+        "elab_net.cc.pt"
+    ],
+    "vector_bug_report_26.pt": [
+        "elab_expr.cc.pt"
+    ],
+    "vector_bug_report_27.pt": [
+        "tgt-vvp_eval_object.c.pt"
+    ],
+    "vector_bug_report_28.pt": [
+        "net_design.cc.pt"
+    ],
+    "vector_bug_report_29.pt": [
+        "net_scope.cc.pt"
+    ],
+    "vector_bug_report_30.pt": [
+        "ivlpp_lexor.lex.pt"
+    ],
+    "vector_bug_report_31.pt": [
+        "elaborate.cc.pt"
+    ],
+    "vector_bug_report_32.pt": [
+        "elaborate.cc.pt"
+    ],
+    "vector_bug_report_33.pt": [
+        "elaborate.cc.pt"
+    ],
+    "vector_bug_report_34.pt": [
+        "net_expr.cc.pt"
+    ],
+    "vector_bug_report_35.pt": [
+        "tgt-vvp_vvp_scope.c.pt",
+        "vvp_vpi_scope.cc.pt"
+    ],
+    "vector_bug_report_36.pt": [
+        "tgt-vvp_draw_net_input.c.pt"
+    ],
+    "vector_bug_report_37.pt": [
+        "elab_net.cc.pt"
+    ],
+    "vector_bug_report_38.pt": [
+        "synth2.cc.pt"
+    ],
+    "vector_bug_report_39.pt": [
+        "elab_scope.cc.pt",
+        "elab_sig.cc.pt",
+        "elab_type.cc.pt",
+        "net_scope.cc.pt",
+        "pform.cc.pt"
+    ],
+    "vector_bug_report_40.pt": [
+        "vvp_vthread.cc.pt"
+    ],
+    "vector_bug_report_41.pt": [
+        "elaborate.cc.pt"
+    ],
+    "vector_bug_report_42.pt": [
+        "elab_expr.cc.pt"
+    ],
+    "vector_bug_report_43.pt": [
+        "elab_net.cc.pt"
+    ],
+    "vector_bug_report_44.pt": [
+        "pform.cc.pt"
+    ],
+    "vector_bug_report_45.pt": [
+        "vvp_vthread.cc.pt"
+    ]
+}

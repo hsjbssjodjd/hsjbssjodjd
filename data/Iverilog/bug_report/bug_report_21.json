@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/steveicarus/iverilog/issues/531",
+    "Summary": "assertion failure constant evaluating function with OOB accesses",
+    "Description": "iverilog (default options) crashes when run on the following module which forces the constant evaluation of a function with out of bounds accesses.\nmodule top;\n    function automatic [2:0] f;\n        input [2:0] i;\n        begin\n            f[0] = i[0];\n            f[3] = i[3];\n            f[3:2] = i[3:2];\n        end\n    endfunction\n    localparam C = f(3'b110);\n    initial $display(\"C %b\", C);\nendmodule\nThis issues exists both in v11.0 and on the latest master (6b12743). Other simulators raise warnings, but simulate just fine and do not crash."
+}

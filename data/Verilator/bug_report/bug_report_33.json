@@ -1,0 +1,5 @@
+{
+    "URL": "https://github.com/verilator/verilator/issues/3863",
+    "Summary": "Nonexistent id linked to an existing symbol",
+    "Description": "References to nonexistent foo::pkg::bar (foo is an empty package) Verilate without errors if a package pkg with a variable static int bar exists.\nIf foo::pkg::bar does exist, it has priority over pkg::bar, as expected.\nHere is an example in test_regress format.\nTested with the latest commit (5fce23e) on Fedora, Linux 6.0.14."
+}
